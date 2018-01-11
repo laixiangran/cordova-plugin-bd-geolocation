@@ -22,8 +22,8 @@ $ cordova plugin add cordova-plugin-baidu-geolocation --variable API_KEY=百度�
 ...
   <!-- android 使用本插件 -->
   <platform name="android">
-    <plugin name="cordova-plugin-baidu-geolocation" spec="https://github.com/ETENG-OSP/cordova-plugin-baidu-geolocation">
-      <variable name="API_KEY" value="百度分配的AK" />
+    <plugin name="cordova-plugin-baidu-geolocation" spec="~6.2.3">
+        <variable name="API_KEY" value="百度分配的AK" />
     </plugin>
   </platform>
   
@@ -84,11 +84,13 @@ extra 定义：
 ```
 
 ### navigator.geolocation.watchPosition(success, [error], [options]);
+
 持续追踪位置变更
 
 返回值：watchId
 
 ### navigator.geolocation.clearWatch(watchId);
+
 清除位置追踪
 
 ## 关于坐标系
