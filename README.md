@@ -13,7 +13,7 @@ Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大
 在控制台里，进入 cordova 项目目录，执行以下命令：
 
 ```bash
-$ cordova plugin add cordova-plugin-baidu-geolocation --variable API_KEY=百度分配的AK --save
+cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocation --variable API_KEY=百度分配的AK --save
 ```
 
 如果需要同时在 iOS 里和 Android 里使用，请在 `config.xml` 里分别配置：
