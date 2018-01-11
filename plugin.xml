@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-baidu-geolocation" version="6.2.3">
+
+  <name>BaiduGeolocation</name>
+
+  <preference name="API_KEY" />
+
+  <platform name="android">
+
+    <js-module src="www/Geolocation.js">
+      <clobbers target="window.navigator.geolocation" />
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="BaiduGeolocation">
+        <param name="android-package" value="com.eteng.geolocation.baidu.GeolocationPlugin" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/w3/Coordinates.java" target-dir="src/com/eteng/geolocation/w3" />
+    <source-file src="src/android/w3/Position.java" target-dir="src/com/eteng/geolocation/w3" />
+    <source-file src="src/android/w3/PositionOptions.java" target-dir="src/com/eteng/geolocation/w3" />
+    <source-file src="src/android/w3/PositionError.java" target-dir="src/com/eteng/geolocation/w3" />
+
+    <source-file src="src/android/BDGeolocation.java" target-dir="src/com/eteng/geolocation/baidu" />
+    <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/eteng/geolocation/baidu" />
+    <source-file src="src/android/MessageBuilder.java" target-dir="src/com/eteng/geolocation/baidu" />
+
+    <source-file src="src/android/libs/armeabi/liblocSDK6a.so" target-dir="libs/armeabi" />
+    <source-file src="src/android/libs/armeabi-v7a/liblocSDK6a.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="src/android/libs/locSDK_6.23.jar" target-dir="libs" />
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <!-- 这个权限用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+      <!-- 这个权限用于访问GPS定位-->
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+      <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+      <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+      <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+      <!-- 用于读取手机当前的状态-->
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+      <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+      <!-- 访问网络，网络定位需要上网-->
+      <uses-permission android:name="android.permission.INTERNET" />
+      <!-- SD卡读取权限，用户写入离线定位数据-->
+      <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
+      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY"/>
+    </config-file>
+
+     <dependency id="cordova-plugin-compat" version="^1.0.0" />
+  </platform>
+</plugin>
