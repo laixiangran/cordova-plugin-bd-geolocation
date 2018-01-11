@@ -22,14 +22,14 @@ cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocati
 ...
   <!-- android 使用本插件 -->
   <platform name="android">
-    <plugin name="cordova-plugin-baidu-geolocation" spec="~6.2.3">
+    <plugin name="cordova-plugin-baidu-geolocation" spec="https://github.com/laixiangran/cordova-plugin-baidu-geolocation">
         <variable name="API_KEY" value="百度分配的AK" />
     </plugin>
   </platform>
   
   <!-- iOS 使用官方插件 -->
   <platform name="ios">
-    <plugin name="cordova-plugin-geolocation" spec="~1.0.0" />
+    <plugin name="cordova-plugin-geolocation" spec="~4.0.1" />
   </platform>
 ...
 ```
