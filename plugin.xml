@@ -13,18 +13,18 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="BaiduGeolocation">
-        <param name="android-package" value="com.eteng.geolocation.baidu.GeolocationPlugin" />
+        <param name="android-package" value="com.lai.geolocation.baidu.GeolocationPlugin" />
       </feature>
     </config-file>
 
-    <source-file src="src/android/w3/Coordinates.java" target-dir="src/com/eteng/geolocation/w3" />
-    <source-file src="src/android/w3/Position.java" target-dir="src/com/eteng/geolocation/w3" />
-    <source-file src="src/android/w3/PositionOptions.java" target-dir="src/com/eteng/geolocation/w3" />
-    <source-file src="src/android/w3/PositionError.java" target-dir="src/com/eteng/geolocation/w3" />
+    <source-file src="src/android/w3/Coordinates.java" target-dir="src/com/lai/geolocation/w3" />
+    <source-file src="src/android/w3/Position.java" target-dir="src/com/lai/geolocation/w3" />
+    <source-file src="src/android/w3/PositionOptions.java" target-dir="src/com/lai/geolocation/w3" />
+    <source-file src="src/android/w3/PositionError.java" target-dir="src/com/lai/geolocation/w3" />
 
-    <source-file src="src/android/BDGeolocation.java" target-dir="src/com/eteng/geolocation/baidu" />
-    <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/eteng/geolocation/baidu" />
-    <source-file src="src/android/MessageBuilder.java" target-dir="src/com/eteng/geolocation/baidu" />
+    <source-file src="src/android/BDGeolocation.java" target-dir="src/com/lai/geolocation/baidu" />
+    <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/lai/geolocation/baidu" />
+    <source-file src="src/android/MessageBuilder.java" target-dir="src/com/lai/geolocation/baidu" />
 
     <source-file src="src/android/libs/armeabi/liblocSDK6a.so" target-dir="libs/armeabi" />
     <source-file src="src/android/libs/armeabi-v7a/liblocSDK6a.so" target-dir="libs/armeabi-v7a" />
