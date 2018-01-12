@@ -26,6 +26,7 @@ public class MessageBuilder {
         .setHeading(location.getDirection())
         .setSpeed(location.getSpeed())
         .setAltitude(location.getAltitude())
+        .setAddr(location.getAddrStr())
       );
 
     JSONObject extra = new JSONObject();

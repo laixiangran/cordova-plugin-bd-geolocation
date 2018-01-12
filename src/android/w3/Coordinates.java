@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Coordinates {
-	
+
 	/**
 	 * http://www.w3.org/TR/geolocation-API/#coordinates_interface
 	 */
@@ -15,10 +15,11 @@ public class Coordinates {
 	double altitudeAccuracy;
 	double heading;
 	double speed;
-	
+	String addr;
+
 	public JSONObject toJSON() {
 		JSONObject json = new JSONObject();
-		
+
 		try {
 			json.put("latitude", latitude);
 			json.put("longitude", longitude);
@@ -27,14 +28,15 @@ public class Coordinates {
 			json.put("altitudeAccuracy", altitudeAccuracy);
 			json.put("heading", heading);
 			json.put("speed", speed);
-			
+			json.put("addr", addr);
+
 			return json;
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public double getLatitude() {
 		return latitude;
 	}
@@ -82,6 +84,13 @@ public class Coordinates {
 	}
 	public Coordinates setSpeed(double speed) {
 		this.speed = speed;
+		return this;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public Coordinates setAddr(String addr) {
+		this.addr = addr;
 		return this;
 	}
 

@@ -40,7 +40,9 @@ public class BDGeolocation {
     LocationClientOption bdoptions = new LocationClientOption();
     bdoptions.setCoorType(coorType);
     bdoptions.setLocationMode(locationMode);
-    bdoptions.setLocationNotify(true);
+    bdoptions.setOpenAutoNotifyMode();
+    // bdoptions.setOpenAutoNotifyMode(5000, 2, LocationClientOption.LOC_SENSITIVITY_MIDDLE);
+    bdoptions.setIsNeedAddress(true);
     client.setLocOption(bdoptions);
   }
 
