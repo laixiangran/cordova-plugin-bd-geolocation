@@ -1,4 +1,4 @@
-package com.eteng.geolocation.baidu;
+package com.lai.geolocation.baidu;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -10,7 +10,7 @@ import org.json.JSONObject;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
-import com.eteng.geolocation.w3.PositionOptions;
+import com.lai.geolocation.w3.PositionOptions;
 
 import android.content.Context;
 import android.util.Log;

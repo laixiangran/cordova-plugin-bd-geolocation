@@ -47,7 +47,7 @@ cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocati
 
 获取当前位置
 
-配置信息：
+#### options
 
 ```
 var options = {
@@ -58,48 +58,48 @@ var options = {
 }
 ```
 
-succes 原型：
+#### success
 
 ```
 function success(position, [extra]) {
 }
 ```
 
-position 定义：
+##### position
 
 ```
 {
   "coords": {
-    "latitude": "number",
-    "longitude": "number",
-    "altitude": "number",
-    "accuracy": "number",
-    "altitudeAccuracy": "number",
-    "heading": "number",
-    "speed": "number"
+    "latitude": "number", // 十进制数的纬度
+    "longitude": "number", // 十进制数的经度
+    "altitude": "number", // 海拔，海平面以上以米计
+    "accuracy": "number", // 位置精度
+    "altitudeAccuracy": "number", // 位置的海拔精度
+    "heading": "number", // 方向，从正北开始以度计
+    "speed": "number" // 速度，以米/每秒计
   },
-  "timestamp": "number"
+  "timestamp": "number" // 响应的日期/时间
 }
 ```
 
-extra 定义：
+###### extra
 
 ```
 {
-  "type": "string"
-  "addr": string
+  "type": "string" // 161：网络定位结果，61：GPS定位结果，66：离线定位结果
+  "addr": string // 详细地址信息
 }
 ```
 
 ### navigator.geolocation.watchPosition(success, [error], [options]);
 
-持续追踪位置变更
+持续追踪位置变更，参数与getCurrentPosition一致。
 
-返回值：watchId: number
+返回值：watchId
 
-### navigator.geolocation.clearWatch(watchId: number);
+### navigator.geolocation.clearWatch(watchId);
 
-清除位置追踪
+清除位置追踪。
 
 ## 关于坐标系
 

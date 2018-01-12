@@ -1,11 +1,11 @@
-package com.eteng.geolocation.baidu;
+package com.lai.geolocation.baidu;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
-import com.eteng.geolocation.w3.PositionOptions;
+import com.lai.geolocation.w3.PositionOptions;
 
 import android.content.Context;
 
