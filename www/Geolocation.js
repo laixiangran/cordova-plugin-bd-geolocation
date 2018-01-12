@@ -12,25 +12,25 @@ var geolocation = module.exports = {};
 var idGenerator = 0;
 
 geolocation.getCurrentPosition = function (success, error, options) {
-  if (typeof sucess === 'object') {
-    options = success;
-  }
-  if (typeof error === 'object') {
-    options = error;
-  }
-  cordova.exec(function(args) {
-    success.apply(null, args);
-  }, error, SERVICE_NAME, ACTION_GET_CURRENT_POSITION, [options]);
+    if (typeof sucess === 'object') {
+        options = success;
+    }
+    if (typeof error === 'object') {
+        options = error;
+    }
+    cordova.exec(function (args) {
+        success.apply(null, args);
+    }, error, SERVICE_NAME, ACTION_GET_CURRENT_POSITION, [options]);
 };
 
 geolocation.watchPosition = function (success, error, options) {
-  var watchId = idGenerator++;
-  cordova.exec(function(args) {
-    success.apply(null, args);
-  }, error, SERVICE_NAME, ACTION_WATCH_POSITION, [options, watchId]);
-  return watchId;
+    var watchId = idGenerator++;
+    cordova.exec(function (args) {
+        success.apply(null, args);
+    }, error, SERVICE_NAME, ACTION_WATCH_POSITION, [options, watchId]);
+    return watchId;
 };
 
 geolocation.clearWatch = function (watchId) {
-  cordova.exec(null, null, SERVICE_NAME, ACTION_CLEAR_WATCH, [watchId]);
+    cordova.exec(null, null, SERVICE_NAME, ACTION_CLEAR_WATCH, [watchId]);
 };

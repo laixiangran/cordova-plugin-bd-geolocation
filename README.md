@@ -44,7 +44,11 @@ cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocati
 --------
 
 ### navigator.geolocation.getCurrentPosition(success, [error], [options]);
+
 获取当前位置
+
+配置信息：
+
 ```
 var options = {
   enableHighAccuracy: true,  // 是否使用 GPS
@@ -55,12 +59,14 @@ var options = {
 ```
 
 succes 原型：
+
 ```
-function success(position, extra) {
+function success(position, [extra]) {
 }
 ```
 
 position 定义：
+
 ```
 {
   "coords": {
@@ -69,7 +75,7 @@ position 定义：
     "altitude": "number",
     "accuracy": "number",
     "altitudeAccuracy": "number",
-    "heading": "string",
+    "heading": "number",
     "speed": "number"
   },
   "timestamp": "number"
@@ -77,9 +83,11 @@ position 定义：
 ```
 
 extra 定义：
+
 ```
 {
   "type": "string"
+  "addr": string
 }
 ```
 
@@ -87,9 +95,9 @@ extra 定义：
 
 持续追踪位置变更
 
-返回值：watchId
+返回值：watchId: number
 
-### navigator.geolocation.clearWatch(watchId);
+### navigator.geolocation.clearWatch(watchId: number);
 
 清除位置追踪
 
@@ -97,7 +105,6 @@ extra 定义：
 
 由于 Baidu 定位的限制，这个插件仅能获取中国偏移坐标系 GCJ02 与 BD09LL（LL 指代经纬度）。如果需要坐标系的转换，请使用第三方服务。
 
-如果期望离线转换坐标系，可以使用这个算法：
-https://github.com/googollee/eviltransform
+如果期望离线转换坐标系，可以使用这个算法：https://github.com/googollee/eviltransform
 
-这个插件不对转换的结果负责
+这个插件不对转换的结果负责。

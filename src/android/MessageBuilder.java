@@ -26,12 +26,12 @@ public class MessageBuilder {
         .setHeading(location.getDirection())
         .setSpeed(location.getSpeed())
         .setAltitude(location.getAltitude())
-        .setAddr(location.getAddrStr())
       );
 
     JSONObject extra = new JSONObject();
     try {
       extra.put("type", location.getLocType());
+      extra.put("addr", location.getAddrStr());
     } catch (JSONException e) {
       e.printStackTrace();
     }

@@ -15,7 +15,6 @@ public class Coordinates {
 	double altitudeAccuracy;
 	double heading;
 	double speed;
-	String addr;
 
 	public JSONObject toJSON() {
 		JSONObject json = new JSONObject();
@@ -28,7 +27,6 @@ public class Coordinates {
 			json.put("altitudeAccuracy", altitudeAccuracy);
 			json.put("heading", heading);
 			json.put("speed", speed);
-			json.put("addr", addr);
 
 			return json;
 		} catch (JSONException e) {
@@ -84,13 +82,6 @@ public class Coordinates {
 	}
 	public Coordinates setSpeed(double speed) {
 		this.speed = speed;
-		return this;
-	}
-	public String getAddr() {
-		return addr;
-	}
-	public Coordinates setAddr(String addr) {
-		this.addr = addr;
 		return this;
 	}
 
