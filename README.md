@@ -8,7 +8,7 @@ Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大
 
 基于[ETENG-OSP](https://github.com/ETENG-OSP/cordova-plugin-baidu-geolocation)的成果进行修改，非常感谢！
 
-## 安装方法
+## 安装
 
 在控制台里，进入 cordova 项目目录，执行以下命令：
 
@@ -35,6 +35,8 @@ cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocati
 ```
 
 ## 卸载
+
+在控制台里，进入 cordova 项目目录，执行以下命令：
 
 ```bash
 cordova plugins remove cordova-plugin-baidu-geolocation
