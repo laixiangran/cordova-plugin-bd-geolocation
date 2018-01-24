@@ -32,7 +32,6 @@ public class MessageBuilder {
     try {
       extra.put("type", location.getLocType());
       extra.put("addr", location.getAddrStr());
-      extra.put("gpsAccuracyStatus", location.getGpsAccuracyStatus());
     } catch (JSONException e) {
       e.printStackTrace();
     }
