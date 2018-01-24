@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-baidu-geolocation" version="6.2.3">
+<plugin id="cordova-plugin-baidu-geolocation" version="7.3.0">
 
   <name>BaiduGeolocation</name>
 
@@ -26,9 +26,9 @@
     <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/lai/geolocation/baidu" />
     <source-file src="src/android/MessageBuilder.java" target-dir="src/com/lai/geolocation/baidu" />
 
-    <source-file src="src/android/libs/armeabi/liblocSDK6a.so" target-dir="libs/armeabi" />
-    <source-file src="src/android/libs/armeabi-v7a/liblocSDK6a.so" target-dir="libs/armeabi-v7a" />
-    <source-file src="src/android/libs/locSDK_6.23.jar" target-dir="libs" />
+    <source-file src="src/android/libs/armeabi/liblocSDK7b.so" target-dir="libs/armeabi" />
+    <source-file src="src/android/libs/armeabi-v7a/liblocSDK7b.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="src/android/libs/BaiduLBS_Android_7.3.jar" target-dir="libs" />
 
     <config-file target="AndroidManifest.xml" parent="/*">
       <!-- 这个权限用于进行网络定位-->
