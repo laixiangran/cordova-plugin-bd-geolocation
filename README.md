@@ -88,7 +88,7 @@ function success(position, [extra]) {
 {
   "type": "string" // 定位类型。161：网络定位结果，61：GPS定位结果，66：离线定位结果
   "addr": string // 详细地址信息
-  "gpsAccuracyStatus": int // GPS质量。0：GPS 质量判断未知，1：GPS 质量判断好，2：GPS 质量判断中等，3：GPS 质量判断差
+  "gpsAccuracyStatus": int // GPS质量。0：GPS质量判断未知，1：GPS质量判断好，2：GPS质量判断中等，3：GPS质量判断差
 }
 ```
 
