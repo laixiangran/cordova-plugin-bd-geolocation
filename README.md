@@ -1,5 +1,4 @@
-Baidu Geolocation for Cordova
-======================
+# Baidu Geolocation for Cordova
 
 Baidu 定位 SDK 版本：6.2.3
 
@@ -7,8 +6,9 @@ Cordova 版本：5.0.0
 
 Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大陆手机无法定位的问题。
 
-安装方法
--------
+基于[ETENG-OSP](https://github.com/ETENG-OSP/cordova-plugin-baidu-geolocation)的成果进行修改，非常感谢！
+
+## 安装方法
 
 在控制台里，进入 cordova 项目目录，执行以下命令：
 
@@ -34,14 +34,18 @@ cordova plugin add https://github.com/laixiangran/cordova-plugin-baidu-geolocati
 ...
 ```
 
-关于 API_KEY
---------
+## 卸载
+
+```bash
+cordova plugins remove cordova-plugin-baidu-geolocation
+```
+
+## 关于 API_KEY
 
 使用前需要在百度申请应用，获取 API_KEY。填错了的话仅能使用 GPS 定位，无法使用基站与 WIFI 定位。
 
 
-使用方法
---------
+## 使用方法
 
 ### navigator.geolocation.getCurrentPosition(success, [error], [options]);
 
