@@ -88,7 +88,7 @@ function success(position, [extra]) {
 }
 ```
 
-###### extra
+##### extra
 
 ```
 {
@@ -96,6 +96,17 @@ function success(position, [extra]) {
   "addr": "string" // 详细地址信息
   "gpsAccuracyStatus": "int" // GPS质量。0：GPS质量判断未知，1：GPS质量判断好，2：GPS质量判断中等，3：GPS质量判断差
 }
+```
+
+注意：由于 W3C 的 geolocation 标准中getCurrentPosition的success回调函数其实是返回一个参数position，因此如果你在typescript中使用，直接写成接收两个参数则会编译出错，因此你可以这样写：
+
+```typescript
+navigator.geolocation.watchPosition((...args: any[]) => {
+    const position: Position = args[0];
+    const extra: any = args[1];
+    console.log(position);
+    console.log(extra);
+}, () => {}, options);
 ```
 
 ### navigator.geolocation.watchPosition(success, [error], [options]);
