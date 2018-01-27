@@ -1,5 +1,7 @@
 # Baidu Geolocation for Cordova
 
+[百度 Android 定位SDK](http://lbsyun.baidu.com/index.php?title=android-locsdk)
+
 Baidu 全量定位 SDK 版本：v7.3（全量定位：包含离线定位、室内高精度定位能力，同时提供更人性化的位置描述服务；）
 
 Cordova 版本：v6.5.0
