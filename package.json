@@ -15,8 +15,8 @@
 		"geolocation",
 		"cordova"
 	],
-	"author": "laixiangran",
-	"license": "ISC",
+	"author": "赖祥燃",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/laixiangran/cordova-plugin-baidu-geolocation/issues"
 	},
