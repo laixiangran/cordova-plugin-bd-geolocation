@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-baidu-geolocation" version="7.3.0">
+<plugin id="cordova-plugin-baidu-geolocation" version="8.0.0">
 
   <name>BaiduGeolocation</name>
+
+  <engines>
+    <engine name="cordova-android" version=">=6.3.0" />
+  </engines>
 
   <preference name="API_KEY" />
 
@@ -56,6 +60,5 @@
       <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY"/>
     </config-file>
 
-     <dependency id="cordova-plugin-compat" version="^1.0.0" />
   </platform>
 </plugin>

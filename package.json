@@ -1,6 +1,6 @@
 {
 	"name": "cordova-plugin-baidu-geolocation",
-	"version": "7.3.0",
+	"version": "8.0.0",
 	"description": "Baidu Geolocation for Cordova（基于百度定位SDK 7.3）",
 	"main": "Geolocation.js",
 	"scripts": {

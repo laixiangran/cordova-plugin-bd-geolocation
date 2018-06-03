@@ -4,8 +4,6 @@
 
 Baidu 全量定位 SDK 版本：v7.3（全量定位：包含离线定位、室内高精度定位能力，同时提供更人性化的位置描述服务；）
 
-Cordova 版本：v6.5.0
-
 Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大陆手机无法定位的问题。
 
 基于[ETENG-OSP](https://github.com/ETENG-OSP/cordova-plugin-baidu-geolocation)的成果进行修改，非常感谢！
