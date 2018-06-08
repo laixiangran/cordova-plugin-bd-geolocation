@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-baidu-geolocation" version="8.0.0">
+<plugin id="cordova-plugin-bd-geolocation" version="8.0.1">
 
-  <name>BaiduGeolocation</name>
+  <name>BDGeolocation</name>
 
   <engines>
     <engine name="cordova-android" version=">=6.3.0" />
