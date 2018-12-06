@@ -6,6 +6,8 @@ var SERVICE_NAME = 'BaiduGeolocation';
 var ACTION_GET_CURRENT_POSITION = 'getCurrentPosition';
 var ACTION_WATCH_POSITION = 'watchPosition';
 var ACTION_CLEAR_WATCH = 'clearWatch';
+var OPEN_FRONTLOCATION_SERVICE = 'openFrontLocationService';
+var CLOSE_FRONTLOCATION_SERVICE = 'closeFrontLocationService';
 
 var geolocation = module.exports = {};
 
@@ -33,4 +35,12 @@ geolocation.watchPosition = function (success, error, options) {
 
 geolocation.clearWatch = function (watchId) {
     cordova.exec(null, null, SERVICE_NAME, ACTION_CLEAR_WATCH, [watchId]);
+};
+
+geolocation.openFrontLocationService = function () {
+    cordova.exec(null, null, SERVICE_NAME, OPEN_FRONTLOCATION_SERVICE, []);
+};
+
+geolocation.closeFrontLocationService = function () {
+    cordova.exec(null, null, SERVICE_NAME, CLOSE_FRONTLOCATION_SERVICE, []);
 };

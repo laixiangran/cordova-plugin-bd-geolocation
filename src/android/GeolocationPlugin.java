@@ -61,8 +61,24 @@ public class GeolocationPlugin extends CordovaPlugin {
       getPermission(CLEAR_WATCH);
       int watchId = args.getInt(0);
       return clearWatch(watchId, callbackContext);
+    } else if (action.equals("openFrontLocationService")) {
+        return openFrontLocationService();
+    } else if (action.equals("closeFrontLocationService")) {
+        return closeFrontLocationService();
     }
     return false;
+  }
+
+    private boolean openFrontLocationService() {
+        Log.i(TAG, "开启前台定位服务");
+        geolocation.openFrontLocationService();
+        return true;
+    }
+
+  private boolean closeFrontLocationService() {
+      Log.i(TAG, "关闭前台定位服务，同时移除通知栏");
+      geolocation.closeFrontLocationService();
+      return true;
   }
 
   private boolean clearWatch(int watchId, CallbackContext callback) {
