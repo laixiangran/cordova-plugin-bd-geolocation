@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-bd-geolocation" version="8.1.0">
+<plugin id="cordova-plugin-bd-geolocation" version="8.0.1">
 
   <name>BDGeolocation</name>
 
@@ -29,6 +29,16 @@
     <source-file src="src/android/BDGeolocation.java" target-dir="src/com/lai/geolocation/baidu" />
     <source-file src="src/android/GeolocationPlugin.java" target-dir="src/com/lai/geolocation/baidu" />
     <source-file src="src/android/MessageBuilder.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationActivity.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationApplication.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationAutoNotify.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationFilter.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationOption.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/LocationService.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/MainActivity.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/NotificationUtils.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/NotifyActivity.java" target-dir="src/com/lai/geolocation/baidu" />
+	<source-file src="src/android/Utils.java" target-dir="src/com/lai/geolocation/baidu" />
 
     <source-file src="src/android/libs/armeabi/liblocSDK7b.so" target-dir="libs/armeabi" />
     <source-file src="src/android/libs/armeabi-v7a/liblocSDK7b.so" target-dir="libs/armeabi-v7a" />
