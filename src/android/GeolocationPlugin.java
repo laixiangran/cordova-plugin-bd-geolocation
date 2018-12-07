@@ -12,6 +12,7 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.lai.geolocation.w3.PositionOptions;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.util.SparseArray;
@@ -96,9 +97,10 @@ public class GeolocationPlugin extends CordovaPlugin {
 
   private boolean watchPosition(JSONObject options, int watchId, final CallbackContext callback) {
     Log.i(TAG, "监听位置变化");
-    Context ctx = cordova.getActivity().getApplicationContext();
+    Activity activity = cordova.getActivity();
+    Context ctx = activity.getApplicationContext();
     PositionOptions positionOpts = new PositionOptions(options);
-    BDGeolocation geolocation = new BDGeolocation(ctx);
+    BDGeolocation geolocation = new BDGeolocation(ctx, activity);
     store.put(watchId, geolocation);
     return geolocation.watchPosition(positionOpts, new BDLocationListener() {
       @Override
@@ -113,9 +115,10 @@ public class GeolocationPlugin extends CordovaPlugin {
 
   private boolean getCurrentPosition(JSONObject options, final CallbackContext callback) {
     Log.i(TAG, "请求当前地理位置");
-    Context ctx = cordova.getActivity().getApplicationContext();
+    Activity activity = cordova.getActivity();
+    Context ctx = activity.getApplicationContext();
     PositionOptions positionOpts = new PositionOptions(options);
-    BDGeolocation geolocation = new BDGeolocation(ctx);
+    BDGeolocation geolocation = new BDGeolocation(ctx, activity);
     return geolocation.getCurrentPosition(positionOpts, new BDLocationListener() {
       @Override
       public void onReceiveLocation(BDLocation location) {

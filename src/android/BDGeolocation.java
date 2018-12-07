@@ -1,4 +1,5 @@
 package com.lai.geolocation.baidu;
+
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -11,6 +12,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 public class BDGeolocation {
 
@@ -21,9 +23,14 @@ public class BDGeolocation {
 	public static final String COORD_BD09 = "bd09";
 	public static final String COORD_GCJ02 = "gcj02";
 
+    private NotificationUtils mNotificationUtils;
 	private BDLocationListener listener;
+	private Context context;
+	private Activity activity;
 
-	BDGeolocation(Context context) {
+	BDGeolocation(Context ctx, Activity act) {
+	    context = ctx;
+	    activity = act;
 		client = new LocationClient(context);
 	}
 
@@ -80,31 +87,34 @@ public class BDGeolocation {
 		listener = null;
 		return true;
 	}
+
 	/**
 	 * 开启前台定位服务
 	 * @return
 	 */
 	public boolean openFrontLocationService() {
-
-		Activity mainActivity = new Activity();
-
-		Notification.Builder builder = new Notification.Builder(mainActivity.getApplicationContext());
-		// 获取一个Notification构造器
-		Intent nfIntent = new Intent(mainActivity.getApplicationContext(),
-				Activity.class);
-		builder.setContentIntent(
-				PendingIntent.getActivity(mainActivity, 0, nfIntent, 0)) // 设置PendingIntent
-				.setContentTitle("正在进行后台定位") // 设置下拉列表里的标题
-//				.setSmallIcon(R.mipmap.ic_launcher) // 设置状态栏内的小图标
-				.setContentText("后台定位通知") // 设置上下文内容
-				.setAutoCancel(true)
-				.setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
-		Notification notification = null;
-		notification = builder.build();
+	    Notification notification = null;
+        if (Build.VERSION.SDK_INT >= 26) {
+            mNotificationUtils = new NotificationUtils(activity);
+            Notification.Builder builder2 = mNotificationUtils.getAndroidChannelNotification("后台定位通知", "正在进行后台定位");
+            notification = builder2.build();
+        } else {
+            Notification.Builder builder = new Notification.Builder(context);
+            Intent nfIntent = new Intent(context,Activity.class);
+            builder.setContentIntent(
+                    PendingIntent.getActivity(activity, 0, nfIntent, 0)) // 设置PendingIntent
+                    .setContentTitle("后台定位通知") // 设置下拉列表里的标题
+			        .setSmallIcon(android.R.drawable.stat_notify_more) // 设置状态栏内的小图标
+                    .setContentText("正在进行后台定位") // 设置上下文内容
+                    .setAutoCancel(true)
+                    .setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
+            notification = builder.build();
+        }
 		notification.defaults = Notification.DEFAULT_SOUND; // 设置为默认的声音
 		client.enableLocInForeground(1001, notification);// 调起前台定位
 		return true;
 	}
+
 	/**
 	 * 关闭前台定位服务，同时移除通知栏
 	 * @return
