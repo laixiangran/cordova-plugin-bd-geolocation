@@ -6,6 +6,7 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
 import com.lai.geolocation.w3.PositionOptions;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -84,19 +85,20 @@ public class BDGeolocation {
 	 * @return
 	 */
 	public boolean openFrontLocationService() {
-		
-		MainActivity mainActivity = new MainActivity(); 
+
+		Activity mainActivity = new Activity();
 
 		Notification.Builder builder = new Notification.Builder(mainActivity.getApplicationContext());
 		// 获取一个Notification构造器
 		Intent nfIntent = new Intent(mainActivity.getApplicationContext(),
-				MainActivity.class);
+				Activity.class);
 		builder.setContentIntent(
 				PendingIntent.getActivity(mainActivity, 0, nfIntent, 0)) // 设置PendingIntent
 				.setContentTitle("正在进行后台定位") // 设置下拉列表里的标题
 //				.setSmallIcon(R.mipmap.ic_launcher) // 设置状态栏内的小图标
 				.setContentText("后台定位通知") // 设置上下文内容
-				.setAutoCancel(true).setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
+				.setAutoCancel(true)
+				.setWhen(System.currentTimeMillis()); // 设置该通知发生的时间
 		Notification notification = null;
 		notification = builder.build();
 		notification.defaults = Notification.DEFAULT_SOUND; // 设置为默认的声音

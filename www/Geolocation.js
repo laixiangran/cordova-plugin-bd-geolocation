@@ -37,10 +37,10 @@ geolocation.clearWatch = function (watchId) {
     cordova.exec(null, null, SERVICE_NAME, ACTION_CLEAR_WATCH, [watchId]);
 };
 
-geolocation.openFrontLocationService = function () {
-    cordova.exec(null, null, SERVICE_NAME, OPEN_FRONTLOCATION_SERVICE, []);
+geolocation.openFrontLocationService = function (watchId) {
+    cordova.exec(null, null, SERVICE_NAME, OPEN_FRONTLOCATION_SERVICE, [watchId]);
 };
 
-geolocation.closeFrontLocationService = function () {
-    cordova.exec(null, null, SERVICE_NAME, CLOSE_FRONTLOCATION_SERVICE, []);
+geolocation.closeFrontLocationService = function (watchId) {
+    cordova.exec(null, null, SERVICE_NAME, CLOSE_FRONTLOCATION_SERVICE, [watchId]);
 };
