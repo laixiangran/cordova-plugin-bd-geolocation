@@ -26,7 +26,7 @@ cordova plugin add cordova-plugin-bd-geolocation --variable API_KEY=百度分配
         <variable name="API_KEY" value="百度分配的AK" />
     </plugin>
   </platform>
-  
+
   <!-- iOS 使用官方插件 -->
   <platform name="ios">
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
@@ -118,6 +118,14 @@ navigator.geolocation.watchPosition((...args: any[]) => {
 ### navigator.geolocation.clearWatch(watchId);
 
 清除位置追踪。
+
+### navigator.geolocation.openFrontLocationService(watchId)
+
+开启前台定位服务。适配 android 8.0 以上对后台定位的限制
+
+### navigator.geolocation.closeFrontLocationService(watchId)
+
+关闭前台定位服务
 
 ## 关于坐标系
 
