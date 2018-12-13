@@ -15,14 +15,12 @@ import android.content.Intent;
 import android.os.Build;
 
 public class BDGeolocation {
-
-	private String TAG = "BDGeolocation";
-	private LocationClient client;
-
 	public static final String COORD_BD09LL = "bd09ll";
 	public static final String COORD_BD09 = "bd09";
 	public static final String COORD_GCJ02 = "gcj02";
 
+	private String TAG = "BDGeolocation";
+	private LocationClient client;
     private NotificationUtils mNotificationUtils;
 	private BDLocationListener listener;
 	private Context context;
@@ -35,30 +33,35 @@ public class BDGeolocation {
 	}
 
 	private void setOptions(PositionOptions options) {
-		// set default coorType
+	    LocationClientOption bdoptions = new LocationClientOption();
+
+		// 设置定位结果坐标系
 		String coorType = options.getCoorType();
 		if (coorType == null || coorType.trim().isEmpty()) {
 			coorType = COORD_GCJ02;
 		}
 
-		// set default locationMode
+        // 可选，默认gcj02，设置返回的定位结果坐标系，如果配合百度地图使用，建议设置为bd09ll;
+        bdoptions.setCoorType(coorType);
+
+		// 设置定位模式
 		LocationMode locationMode = LocationMode.Battery_Saving;
 		if (options.isEnableHighAccuracy()) {
 			locationMode = LocationMode.Hight_Accuracy;
 		}
 
-		LocationClientOption bdoptions = new LocationClientOption();
-		bdoptions.setCoorType(coorType);
+		// 可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
 		bdoptions.setLocationMode(locationMode);
+
+		// 设置打开自动回调位置模式，该开关打开后，期间只要定位SDK检测到位置变化就会主动回调给开发者，该模式下开发者无需再关心定位间隔是多少，定位SDK本身发现位置变化就会及时回调给开发者
 		bdoptions.setOpenAutoNotifyMode();
-		// bdoptions.setOpenAutoNotifyMode(5000, 2,
-		// LocationClientOption.LOC_SENSITIVITY_MIDDLE);
+
+		// 可选，默认false, 设置是否需要地址信息
 		bdoptions.setIsNeedAddress(true);
 		client.setLocOption(bdoptions);
 	}
 
-	public boolean getCurrentPosition(PositionOptions options,
-			final BDLocationListener callback) {
+	public boolean getCurrentPosition(PositionOptions options, final BDLocationListener callback) {
 		listener = new BDLocationListener() {
 			@Override
 			public void onReceiveLocation(BDLocation location) {
@@ -72,8 +75,7 @@ public class BDGeolocation {
 		return true;
 	}
 
-	public boolean watchPosition(PositionOptions options,
-			BDLocationListener callback) {
+	public boolean watchPosition(PositionOptions options, BDLocationListener callback) {
 		listener = callback;
 		setOptions(options);
 		client.registerLocationListener(listener);
@@ -123,5 +125,4 @@ public class BDGeolocation {
 		client.disableLocInForeground(true);
 		return true;
 	}
-
 }
