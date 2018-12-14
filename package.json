@@ -1,7 +1,7 @@
 {
 	"name": "cordova-plugin-bd-geolocation",
-	"version": "8.2.0",
-	"description": "Baidu Geolocation for Cordova（基于百度定位SDK 7.3。实现前台定位通知服务来适配 android 8.0 对后台定位的限制）",
+	"version": "8.5.0",
+	"description": "Baidu Geolocation for Cordova",
 	"main": "Geolocation.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

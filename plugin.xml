@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-bd-geolocation" version="8.2.0">
+<plugin id="cordova-plugin-bd-geolocation" version="8.5.0">
 
     <name>BDGeolocation</name>
 
@@ -33,7 +33,7 @@
 
         <source-file src="src/android/libs/armeabi/liblocSDK7b.so" target-dir="libs/armeabi"/>
         <source-file src="src/android/libs/armeabi-v7a/liblocSDK7b.so" target-dir="libs/armeabi-v7a"/>
-        <source-file src="src/android/libs/BaiduLBS_Android_7.3.jar" target-dir="libs"/>
+        <source-file src="src/android/libs/BaiduLBS_Android.jar" target-dir="libs"/>
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <!-- 这个权限用于进行网络定位-->

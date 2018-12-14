@@ -2,7 +2,7 @@
 
 [百度 Android 定位SDK](http://lbsyun.baidu.com/index.php?title=android-locsdk)
 
-Baidu 全量定位 SDK 版本：v7.3（全量定位：包含离线定位、室内高精度定位能力，同时提供更人性化的位置描述服务；）
+Baidu 全量定位 SDK 版本：v7.5（全量定位：包含离线定位、室内高精度定位能力，同时提供更人性化的位置描述服务；）
 
 Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大陆手机无法定位的问题。
 
@@ -28,7 +28,7 @@ cordova plugin add cordova-plugin-bd-geolocation --variable API_KEY=百度分配
 ...
   <!-- android 使用本插件 -->
   <platform name="android">
-    <plugin name="cordova-plugin-bd-geolocation" spec="^8.0.0">
+    <plugin name="cordova-plugin-bd-geolocation" spec="^8.5.0">
         <variable name="API_KEY" value="百度分配的AK" />
     </plugin>
   </platform>
