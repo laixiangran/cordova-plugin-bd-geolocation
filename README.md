@@ -127,11 +127,11 @@ navigator.geolocation.watchPosition((...args: any[]) => {
 
 ### navigator.geolocation.openFrontLocationService(watchId)
 
-开启前台定位服务。适配 android 8.0 以上对后台定位的限制。判断当前应用在后台运行，则调用该方法。
+开启前台定位通知服务。适配 android 8.0 以上对后台定位的限制。判断当前应用在后台运行，则调用该方法。
 
 ### navigator.geolocation.closeFrontLocationService(watchId)
 
-关闭前台定位服务。判断当前应用不在后台运行，则调用该方法。
+关闭前台定位通知服务。判断当前应用不在后台运行，则调用该方法。
 
 ## 关于坐标系
 
