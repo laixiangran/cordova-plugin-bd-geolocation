@@ -8,6 +8,12 @@ Cordova 百度定位插件，兼容 W3C 的 geolocation 标准，解决中国大
 
 基于[ETENG-OSP](https://github.com/ETENG-OSP/cordova-plugin-baidu-geolocation)的成果进行修改，非常感谢！
 
+## 重要
+
+为了适配 `Android 8.0` 对后台定位的限制，特根据sdk新增 `openFrontLocationService` 及 `closeFrontLocationService` 两个方法，详细用法见后面的说明。
+
+官方说明：[http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/addition-func/android8-notice](http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/addition-func/android8-notice)
+
 ## 安装
 
 在控制台里，进入 cordova 项目目录，执行以下命令：
